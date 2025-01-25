@@ -248,7 +248,8 @@ export default defineComponent({
     links: [
       { text: 'Home', to: '/' },
       { text: 'About', to: '/about' },
-      { text: 'Gantt', to: '/gantt' },
+      { text: '甘特图1', to: '/gantt1' },
+      { text: '甘特图2', to: '/gantt2' },
     ],
   }),
 })
