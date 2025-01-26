@@ -11,7 +11,7 @@
     </div>
 
     <!-- Header -->
-    <div class="relative grid grid-cols-[5rem_repeat(5,1fr)] border-b border-slate-200">
+    <div class="grid grid-cols-[5rem_repeat(5,1fr)]">
       <div></div>
       <div class="text-center">Mon</div>
       <div class="text-center">Tue</div>
@@ -21,7 +21,7 @@
     </div>
 
     <!-- Rows -->
-    <div class="grid grid-cols-[5rem_1fr] border-b border-slate-200">
+    <div class="grid grid-cols-[5rem_1fr] items-center border-t border-slate-200 py-1">
       <div class="px-1">John</div>
       <div class="grid grid-cols-5">
         <div class="col-start-2 col-span-3 h-4 bg-green-500 rounded-lg m-1"></div>
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-[5rem_1fr] border-b border-slate-200">
+    <div class="grid grid-cols-[5rem_1fr] items-center border-t border-slate-200 py-1">
       <div class="px-1">Smith</div>
       <div class="grid grid-cols-5">
         <div class="col-start-2 col-span-2 h-4 bg-green-500 rounded-lg m-1"></div>
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-[5rem_1fr] border-b border-slate-200">
+    <div class="grid grid-cols-[5rem_1fr] items-center border-t border-slate-200 py-1">
       <div class="px-1">Foo</div>
       <div class="grid grid-cols-5">
         <div class="col-start-1 col-span-1 h-4 bg-red-500 rounded-lg m-1"></div>
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-[5rem_1fr] border-b border-slate-200">
+    <div class="grid grid-cols-[5rem_1fr] items-center border-t border-slate-200 py-1">
       <div class="px-1">Bar</div>
       <div class="grid grid-cols-5">
         <div class="col-start-1 col-span-3 h-4 bg-red-500 rounded-lg m-1"></div>
