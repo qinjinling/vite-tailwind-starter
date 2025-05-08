@@ -26,7 +26,7 @@ export let routes = [
     path: '/issue-details/:id',
     component: IssueDetail,
     meta: {
-      title: '故障详情',
+      title: '工单详情',
       comment: '故障诊断与修复'
     }
   },
