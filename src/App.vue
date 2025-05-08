@@ -4,8 +4,12 @@
       <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
-            <div class="flex-shrink-0">
+            <div class="flex-shrink-0 flex items-center">
               <img class="w-8 h-8" src="/img/logos/workflow-mark-on-dark.svg" alt="Workflow logo" />
+              <div class="ml-2 flex flex-col">
+                <span class="text-white text-[26px] font-semibold">智能运维平台</span>
+                <span class="text-xs text-gray-300">算力云故障诊断与修复系统</span>
+              </div>
             </div>
             <div class="hidden md:block">
               <div class="flex items-baseline ml-10">
@@ -19,9 +23,9 @@
                         ? 'text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700'
                         : 'text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700',
                       i > 0 && 'ml-4'
-                    ]"
-                    >{{ link.text }}</a
-                  >
+                    ]">
+                    {{ link.text }}
+                  </a>
                 </router-link>
               </div>
             </div>
@@ -148,14 +152,24 @@
     </nav>
 
     <header class="bg-white shadow" v-if="$route.meta.title">
-      <div class="max-w-screen-xl px-4 py-6 mx-auto sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold leading-tight text-gray-900">
-          {{ $route.meta.title }}
-        </h1>
+      <div class="max-w-screen-xl px-4 py-6 mx-auto sm:px-6 lg:px-8 flex justify-between items-center">
+        <div class="ml-2 flex flex-col">
+          <h1 class="text-3xl font-bold leading-tight text-gray-900">
+            {{ $route.meta.title }}
+          </h1>
+          <p v-if="$route.meta.comment" class="text-slate-500 mt-1">{{ $route.meta.comment }}</p>
+        </div>
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="搜索..."
+            class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:w-64" />
+          <SearchIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+        </div>
       </div>
     </header>
 
-    <div class="max-w-screen-xl py-6 mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-screen-xl mx-auto sm:px-6 lg:px-8">
       <router-view />
     </div>
   </div>
@@ -163,17 +177,20 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { SearchIcon } from 'lucide-vue-next'
 
 export default defineComponent({
+  components: {
+    SearchIcon
+  },
   data: () => ({
     showMenu: false,
     showProfileMenu: false,
     links: [
-      { text: 'Home', to: '/' },
-      { text: 'About', to: '/about' },
-      { text: '甘特图1', to: '/gantt1' },
-      { text: '甘特图2', to: '/gantt2' },
-      { text: 'Lucide图标示例', to: '/lucide-icons-example' }
+      { text: '控制台', to: '/' },
+      { text: '工单列表', to: '/issues' },
+      { text: '甘特图', to: '/gantt' },
+      { text: 'Lucide 图标', to: '/lucide-icons-example' }
     ]
   })
 })

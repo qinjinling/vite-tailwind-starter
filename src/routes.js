@@ -1,16 +1,14 @@
 import Home from './views/Home.vue'
-import About from './views/About.vue'
-import Gantt1 from './views/Gantt1.vue'
-import Gantt2 from './views/Gantt2.vue'
+import Issues from './views/Issues.vue'
+import Gantt from './views/Gantt.vue'
 import LucideIconsExample from './views/LucideIconsExample.vue'
 import NotFound from './views/NotFound.vue'
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export let routes = [
-  { path: '/', component: Home, meta: { title: 'Home' } },
-  { path: '/about', component: About, meta: { title: 'About' } },
-  { path: '/gantt1', component: Gantt1, meta: { title: 'Gantt1' } },
-  { path: '/gantt2', component: Gantt2, meta: { title: 'Gantt2' } },
+  { path: '/', component: Home, meta: { title: '控制台总览' } },
+  { path: '/issues', component: Issues, meta: { title: '工单列表', comment: '集中展示和处理所有未解决的计算节点故障。' } },
+  { path: '/gantt', component: Gantt, meta: { title: '甘特图' } },
   { path: '/lucide-icons-example', component: LucideIconsExample, meta: { title: 'Lucide 图标示例' } },
   { path: '/:path(.*)', component: NotFound }
 ]
