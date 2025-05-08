@@ -121,7 +121,7 @@
         <h2 class="text-lg font-semibold text-gray-700">工单列表</h2>
         <div class="flex items-center space-x-2">
           <span class="text-sm text-gray-500">排序方式:</span>
-          <select v-model="sortBy" class="rounded-md border border-gray-300 shadow-sm px-3 py-1 text-sm">
+          <select v-model="sortBy" class="rounded-md border border-gray-300 shadow-sm pl-3 pr-8 py-1 text-sm">
             <option value="time">发生时间</option>
             <option value="severity">严重程度</option>
             <option value="duration">故障时长</option>

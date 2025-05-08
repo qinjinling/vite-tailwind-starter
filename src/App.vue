@@ -17,13 +17,14 @@
                   <a
                     :href="href"
                     @click="navigate"
-                    class="px-3 py-2 text-sm font-medium rounded-md"
+                    class="px-3 py-2 text-sm font-medium rounded-md flex items-center"
                     :class="[
                       isExactActive
                         ? 'text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700'
                         : 'text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700',
                       i > 0 && 'ml-4'
                     ]">
+                    <component v-if="link.icon" :is="link.icon" class="w-4 h-4 mr-2" />
                     {{ link.text }}
                   </a>
                 </router-link>
@@ -111,13 +112,14 @@
             <a
               :href="href"
               @click="navigate().then(() => (showMenu = false))"
-              class="block px-3 py-2 text-base font-medium rounded-md"
+              class="block px-3 py-2 text-base font-medium rounded-md flex items-center"
               :class="[
                 isExactActive
                   ? 'text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700'
                   : 'text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700',
                 i > 0 && 'mt-1'
               ]">
+              <component v-if="link.icon" :is="link.icon" class="w-4 h-4 mr-2" />
               {{ link.text }}
             </a>
           </router-link>
@@ -181,14 +183,14 @@
 
 <script setup>
 import { ref } from 'vue'
-import { SearchIcon, UserRound } from 'lucide-vue-next'
+import { SearchIcon, UserRound, LayoutDashboard, ClipboardList, BookText, FileCode } from 'lucide-vue-next'
 
 const showMenu = ref(false)
 const showProfileMenu = ref(false)
 const links = [
-  { text: '控制台', to: '/' },
-  { text: '工单列表', to: '/issues' },
-  { text: '运维知识库', to: '/gantt' },
-  { text: '脚本库', to: '/lucide-icons-example' }
+  { text: '控制台', to: '/', icon: LayoutDashboard },
+  { text: '工单列表', to: '/issues', icon: ClipboardList },
+  { text: '运维知识库', to: '/gantt', icon: BookText },
+  { text: '脚本库', to: '/lucide-icons-example', icon: FileCode }
 ]
 </script>
