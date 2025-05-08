@@ -179,24 +179,16 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
+<script setup>
+import { ref } from 'vue'
 import { SearchIcon, UserRound } from 'lucide-vue-next'
 
-export default defineComponent({
-  components: {
-    SearchIcon,
-    UserRound
-  },
-  data: () => ({
-    showMenu: false,
-    showProfileMenu: false,
-    links: [
-      { text: '控制台', to: '/' },
-      { text: '工单列表', to: '/issues' },
-      { text: '运维知识库', to: '/gantt' },
-      { text: '脚本库', to: '/lucide-icons-example' }
-    ]
-  })
-})
+const showMenu = ref(false)
+const showProfileMenu = ref(false)
+const links = [
+  { text: '控制台', to: '/' },
+  { text: '工单列表', to: '/issues' },
+  { text: '运维知识库', to: '/gantt' },
+  { text: '脚本库', to: '/lucide-icons-example' }
+]
 </script>

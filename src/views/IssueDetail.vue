@@ -353,23 +353,6 @@
               </ul>
             </div>
           </div>
-
-          <!-- 评论区 -->
-          <div class="px-6 py-4">
-            <h3 class="text-md font-medium text-gray-700 mb-3">工程师评论:</h3>
-            <ul class="space-y-4">
-              <li v-for="(comment, index) in comments" :key="index" class="bg-gray-50 rounded-lg p-3">
-                <div class="flex items-center mb-2">
-                  <img class="h-8 w-8 rounded-full" :src="comment.avatar" alt="" />
-                  <div class="ml-2">
-                    <h4 class="font-medium text-sm text-gray-800">{{ comment.author }}</h4>
-                    <p class="text-xs text-gray-500">{{ comment.time }}</p>
-                  </div>
-                </div>
-                <p class="text-sm text-gray-700">{{ comment.content }}</p>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -543,22 +526,6 @@ const workflowSteps = ref([
     user: '李工程师',
     description: '工程师正在评估AI推荐的解决方案，准备执行修复操作。',
     completed: false
-  }
-])
-
-// 工程师评论
-const comments = ref([
-  {
-    author: '张工程师',
-    avatar: '/img/person1.jpeg',
-    time: '今天 10:08',
-    content: '我上个月处理过类似的故障，是电源模块需要更换，建议直接准备备用电源模块。'
-  },
-  {
-    author: '李工程师',
-    avatar: '/img/person2.jpeg',
-    time: '今天 10:12',
-    content: '我已经联系机房管理员，准备好了备用电源模块，正在前往现场处理。'
   }
 ])
 
