@@ -9,20 +9,16 @@ module.exports = {
     safeList: [],
     content: [
       './index.html',
-      './src/**/*.{vue,js,ts}',
+      './src/**/*.{vue,js,ts}'
       // etc.
-    ],
+    ]
   },
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
-    },
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
+      }
+    }
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')]
 }
