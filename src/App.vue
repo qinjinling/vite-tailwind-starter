@@ -53,7 +53,9 @@
                     aria-label="User menu"
                     aria-haspopup="true"
                     @click="showProfileMenu = !showProfileMenu">
-                    <img class="w-8 h-8 rounded-full" src="/img/person1.jpeg" alt="" />
+                    <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">
+                      <UserRound class="w-6 h-6 text-white" />
+                    </div>
                   </button>
                 </div>
 
@@ -64,15 +66,15 @@
                   leave-active-class="transition duration-75 ease-in"
                   leave-from-class="transform scale-100 opacity-100"
                   leave-to-class="transform scale-95 opacity-0">
-                  <div v-if="showProfileMenu" class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg">
+                  <div v-if="showProfileMenu" class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg z-50">
                     <div
                       class="py-1 bg-white rounded-md ring-1 ring-black ring-opacity-5"
                       role="menu"
                       aria-orientation="vertical"
                       aria-labelledby="user-menu">
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"> 个人资料 </a>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"> 设置 </a>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"> 退出系统 </a>
                     </div>
                   </div>
                 </transition>
@@ -123,7 +125,9 @@
         <div class="pt-4 pb-3 border-t border-gray-700">
           <div class="flex items-center px-5">
             <div class="flex-shrink-0">
-              <img class="w-10 h-10 rounded-full" src="/img/person1.jpeg" alt="" />
+              <div class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center">
+                <UserRound class="w-8 h-8 text-white" />
+              </div>
             </div>
             <div class="ml-3">
               <div class="text-base font-medium leading-none text-white">Tom Cook</div>
@@ -134,17 +138,17 @@
             <a
               href="#"
               class="block px-3 py-2 text-base font-medium text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
-              Your Profile
+              个人资料
             </a>
             <a
               href="#"
               class="block px-3 py-2 mt-1 text-base font-medium text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
-              Settings
+              设置
             </a>
             <a
               href="#"
               class="block px-3 py-2 mt-1 text-base font-medium text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
-              Sign out
+              退出系统
             </a>
           </div>
         </div>
@@ -177,11 +181,12 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { SearchIcon } from 'lucide-vue-next'
+import { SearchIcon, UserRound } from 'lucide-vue-next'
 
 export default defineComponent({
   components: {
-    SearchIcon
+    SearchIcon,
+    UserRound
   },
   data: () => ({
     showMenu: false,
@@ -189,8 +194,8 @@ export default defineComponent({
     links: [
       { text: '控制台', to: '/' },
       { text: '工单列表', to: '/issues' },
-      { text: '甘特图', to: '/gantt' },
-      { text: 'Lucide 图标', to: '/lucide-icons-example' }
+      { text: '运维知识库', to: '/gantt' },
+      { text: '脚本库', to: '/lucide-icons-example' }
     ]
   })
 })

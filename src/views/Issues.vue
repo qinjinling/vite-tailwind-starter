@@ -185,6 +185,9 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 // 模拟数据
 const issues = ref([])
@@ -451,8 +454,8 @@ function applyFilters() {
 // 查看故障详情
 function viewDetails(issue) {
   console.log('查看故障详情:', issue)
-  // 在实际应用中，可能会打开一个模态框或跳转到详情页面
-  alert(`查看故障ID: ${issue.id} 的详情`)
+  // 跳转到详情页面
+  router.push(`/issue-details/${issue.id}`)
 }
 
 // 创建新工单
